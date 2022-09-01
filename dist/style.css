@@ -1,4 +1,10 @@
 :root {
+  /* CSS HEX */
+  --primary-dark: #386641ff;
+  --primary-medium: #6a994eff;
+  --primary-light: #a7c957ff;
+  --background: #f2e8cfff;
+  --error: #bc4749ff;
 }
 
 *,
@@ -11,4 +17,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+}
+
+.primary-navigation {
 }
