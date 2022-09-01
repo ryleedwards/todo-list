@@ -42,6 +42,10 @@ body {
   background-color: var(--primary-dark);
 }
 
+.main {
+  display: flex;
+}
+
 .sidebar {
   height: 100%;
   width: 240px;
@@ -49,6 +53,12 @@ body {
   color: var(--primary-dark);
   min-height: 100vh;
   padding: 8px 16px;
+  transition: width 0.2s;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 0px;
 }
 
 .sidebar > ul {
@@ -58,6 +68,7 @@ body {
 .sidebar > ul > li {
   padding: 8px 16px;
   border-radius: 4px;
+  white-space: nowrap;
 }
 
 .sidebar > ul > li:hover {

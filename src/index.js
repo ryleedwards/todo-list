@@ -1,2 +1,13 @@
 const content = document.getElementById("content");
-console.log(content);
+
+const sidebar = document.querySelector(".sidebar");
+
+const btnMenu = document.getElementById("menu");
+
+btnMenu.addEventListener("click", () => {
+  openMenu();
+});
+
+function openMenu() {
+  sidebar.classList.toggle("hidden");
+}
