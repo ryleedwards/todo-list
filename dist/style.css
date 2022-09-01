@@ -22,13 +22,24 @@ body {
   background-color: var(--background);
 }
 
-.sidebar > ul {
-  list-style: none;
+.top-nav {
+  min-width: 100vw;
+  min-height: 36px;
+  background-color: var(--primary-medium);
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
 }
 
-li > a {
-  text-decoration: none;
-  color: inherit;
+.top-nav > i {
+  color: whitesmoke;
+  padding: 4px;
+  margin: 4px;
+  border-radius: 4px;
+}
+
+.top-nav > i:hover {
+  background-color: var(--primary-dark);
 }
 
 .sidebar {
@@ -38,4 +49,17 @@ li > a {
   color: var(--primary-dark);
   min-height: 100vh;
   padding: 8px 16px;
+}
+
+.sidebar > ul {
+  list-style: none;
+}
+
+.sidebar > ul > li {
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.sidebar > ul > li:hover {
+  background-color: var(--background);
 }
