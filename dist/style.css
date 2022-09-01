@@ -19,5 +19,8 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.primary-navigation {
+.sidebar {
+  height: 100%;
+  width: 240px;
+  background-color: black;
 }

@@ -5,28 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/039b0c6e1b.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <nav>
-      <ul id="primary-navigation" class="primary-navigation">
-        <li class="active">
-          <a href=""><span aria-hidden="true">00</span>zero</a>
+    <div class="sidebar">
+      <i class="fa-solid fa-bars"></i>
+      <ul class="nav-list">
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-inbox"></i>
+            <span class="links-name">Inbox</span>
+          </a>
         </li>
         <li>
-          <a href=""><span aria-hidden="true">01</span>one</a>
+          <a href="#">
+            <i class="fa-regular fa-calendar"></i>
+            <span class="links-name">Today</span>
+          </a>
         </li>
         <li>
-          <a href=""><span aria-hidden="true">02</span>two</a>
-        </li>
-        <li>
-          <a href=""><span aria-hidden="true">03</span>three</a>
+          <a href="#">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="links-name">Upcoming</span>
+          </a>
         </li>
       </ul>
-    </nav>
+    </div>
     <div id="content"></div>
     <script src="main.js"></script>
   </body>
