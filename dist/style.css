@@ -52,8 +52,7 @@ body {
   background-color: var(--background-medium);
   color: var(--primary-dark);
   min-height: 100vh;
-  padding: 8px 16px;
-  transition: width 0.2s;
+  transition: width 0.5s;
 }
 
 .hidden {
@@ -66,11 +65,15 @@ body {
 }
 
 .sidebar > ul > li {
-  padding: 8px 16px;
+  margin: 4px 8px;
+  padding: 4px 8px;
   border-radius: 4px;
   white-space: nowrap;
+  font-size: 1.25em;
 }
 
 .sidebar > ul > li:hover {
   background-color: var(--background);
+  cursor: pointer;
+  transition: 0.1s;
 }
