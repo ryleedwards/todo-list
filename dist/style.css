@@ -4,6 +4,8 @@
   --primary-medium: #6a994eff;
   --primary-light: #a7c957ff;
   --background: #f2e8cfff;
+  --background-medium: #ebdcb6;
+  --background-dark: #e4d09d;
   --error: #bc4749ff;
 }
 
@@ -17,10 +19,23 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: var(--background);
+}
+
+.sidebar > ul {
+  list-style: none;
+}
+
+li > a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .sidebar {
   height: 100%;
   width: 240px;
-  background-color: black;
+  background-color: var(--background-medium);
+  color: var(--primary-dark);
+  min-height: 100vh;
+  padding: 8px 16px;
 }
