@@ -1,8 +1,16 @@
-import Task from "./Task";
+import Project from "./Project";
 
-export default function generateToDoList() {
-  let task1 = new Task("task1", "09/02/2022");
-  console.log(task1);
-  let task2 = new Task("task2");
-  console.log(task2);
+export default class ToDoList {
+  constructor() {
+    this.projects = [];
+  }
+
+  addProject(title, tasks) {
+    console.log(`addProject(${title}, ${tasks})`);
+    this.projects.push(new Project(title, tasks));
+  }
+
+  getProjects() {
+    return this.projects;
+  }
 }

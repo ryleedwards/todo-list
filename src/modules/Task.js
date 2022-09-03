@@ -11,6 +11,8 @@ export default class Task {
   setTitle(newTitle) {
     newTitle = newTitle.trim();
     if (newTitle === "") {
+      //reject empty title
+      // *** CREATE LOGIC ***
       return;
     }
     this.title = newTitle;

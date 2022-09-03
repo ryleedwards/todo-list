@@ -1,3 +1,3 @@
-import generateToDoList from "./modules/ToDoList";
+import UI from "./modules/UI";
 
-generateToDoList();
+UI.load();
