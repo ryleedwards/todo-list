@@ -1,4 +1,5 @@
 import ToDoList from "./ToDoList";
+import { compareAsc, format } from "date-fns";
 
 const DEFAULT_PROJECT_TITLE = "Default";
 const DEFAULT_TASK_TITLE = "Default task";
@@ -16,11 +17,7 @@ export default class UI {
 
   static loadToDoList() {
     const contentDiv = document.getElementById("content");
-    let toDoList = new ToDoList();
-    toDoList.addProject(DEFAULT_PROJECT_TITLE);
-
-    toDoList.getProjects()[0].addTask(DEFAULT_TASK_TITLE);
-
+    let toDoList = this.createDefaultProject();
     // toDoList.getProjects().forEach((project) => {
     //   console.log(project.getTitle());
     //   project.getTasks().forEach((task) => {
@@ -32,7 +29,8 @@ export default class UI {
   static createDefaultProject() {
     let toDoList = new ToDoList();
     toDoList.addProject(DEFAULT_PROJECT_TITLE);
-    toDoList.getProjects()[0].getTitle();
+    toDoList.getProjects()[0].addTask(DEFAULT_TASK_TITLE);
+    return toDoList;
   }
 
   static loadProjects() {
@@ -40,7 +38,6 @@ export default class UI {
   }
 
   static initListeners() {
-    console.log("initializing listeners");
     // CONSTANT ELEMENTS DECLARATIONS
     const btnMenu = document.getElementById("menu");
     const sidebar = document.querySelector(".sidebar");

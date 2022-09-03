@@ -6,7 +6,6 @@ export default class ToDoList {
   }
 
   addProject(title, tasks) {
-    console.log(`addProject(${title}, ${tasks})`);
     this.projects.push(new Project(title, tasks));
   }
 
