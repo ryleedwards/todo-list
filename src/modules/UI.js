@@ -7,6 +7,7 @@ const DEFAULT_TASK_DESC = "Create my first task";
 
 export default class UI {
   static load() {
+    const contentDiv = document.getElementById("content");
     this.loadInitial();
   }
 
@@ -16,14 +17,7 @@ export default class UI {
   }
 
   static loadToDoList() {
-    const contentDiv = document.getElementById("content");
     let toDoList = this.createDefaultProject();
-    // toDoList.getProjects().forEach((project) => {
-    //   console.log(project.getTitle());
-    //   project.getTasks().forEach((task) => {
-    //     console.log(task.getTitle());
-    //   });
-    // });
   }
 
   static createDefaultProject() {
