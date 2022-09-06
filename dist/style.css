@@ -91,12 +91,30 @@ body {
   width: 1080px;
   border-radius: 8px;
   background-color: var(--background-dark);
-  display: grid;
+  display: flex;
+  flex-direction: column;
+}
+
+#project-view > * {
+  border: solid black 1px;
 }
 
 .project-title {
   padding: 8px;
   font-weight: bold;
+  font-size: 1.75rem;
+  height: 48px;
+}
+
+.task-container {
+  display: flex;
+  align-items: center;
+}
+
+.task-container > * {
+  border: solid blue 1px;
+  flex-grow: 1;
+  padding: 16px;
 }
 
 .sidebar-projects {
