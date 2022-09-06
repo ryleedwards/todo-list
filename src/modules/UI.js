@@ -1,4 +1,6 @@
 import ToDoList from "./ToDoList";
+import Project from "./Project";
+import Task from "./Task";
 import { compareAsc, format } from "date-fns";
 
 const DEFAULT_PROJECT_TITLE = "Default";
@@ -40,5 +42,9 @@ export default class UI {
     btnMenu.addEventListener("click", () => {
       sidebar.classList.toggle("hidden");
     });
+  }
+  static addTask(task) {
+    const projectTasksDiv = document.getElementById("project-view");
+    projectTasksDiv.innerHTML += "abc";
   }
 }

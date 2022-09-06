@@ -1,11 +1,10 @@
 :root {
   /* CSS HEX */
-  --primary-dark: #386641ff;
-  --primary-medium: #6a994eff;
-  --primary-light: #a7c957ff;
-  --background: #f2e8cfff;
-  --background-medium: #ebdcb6;
-  --background-dark: #e4d09d;
+  --primary-dark: #1d3557;
+  --primary-medium: #457b9d;
+  --primary-light: #a8dadc;
+  --secondary-light: #f1faee;
+  --secondary-dark: #111f32;
   --error: #bc4749ff;
 }
 
@@ -19,7 +18,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--background);
+  background-color: var(--primary-dark);
+  color: var(--secondary-light);
 }
 
 .top-nav {
@@ -49,7 +49,7 @@ body {
 .sidebar {
   height: 100%;
   width: 240px;
-  background-color: var(--background-medium);
+  background-color: var(--primary-medium);
   color: var(--primary-dark);
   min-height: 100vh;
   transition: width 0.5s;
@@ -73,7 +73,7 @@ body {
 }
 
 .sidebar > ul > li:hover {
-  background-color: var(--background);
+  background-color: var(--primary-light);
   cursor: pointer;
   transition: 0.1s;
 }
@@ -90,7 +90,7 @@ body {
   height: 480px;
   width: 1080px;
   border-radius: 8px;
-  background-color: var(--background-dark);
+  background-color: var(--secondary-dark);
   display: flex;
   flex-direction: column;
 }
@@ -122,8 +122,7 @@ body {
   padding: 16px;
   white-space: nowrap;
   border-radius: 4px;
-  border: solid var(--background-dark) 1px;
-  background-color: var(--background-dark);
+  border: solid var(--secondary-dark) 1px;
 }
 
 #project-list {
