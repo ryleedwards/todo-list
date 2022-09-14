@@ -1,3 +1,7 @@
-import UI from "./modules/UI";
+import UI from "./modules/initUI";
+import ToDoList from "./modules/ToDoList";
+import { initEventsDOM } from "./modules/initUI";
 
-UI.load();
+document.addEventListener("DOMContentLoaded", () => {
+  initEventsDOM();
+});
