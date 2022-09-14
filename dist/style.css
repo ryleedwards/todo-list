@@ -134,6 +134,10 @@ body {
   align-self: center;
 }
 
+.task-complete {
+  max-width: 100px;
+}
+
 /* Begin sidebar */
 
 .sidebar-projects {
