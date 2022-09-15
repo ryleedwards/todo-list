@@ -3,15 +3,18 @@ export default class UI {
     document.querySelector(".sidebar").classList.toggle("hidden");
   }
   goHome() {
-    //go home
+    console.log("goHome called");
   }
   addTask() {
-    //add Task
+    console.log("addTask called");
   }
   editTaskTitle() {
-    // edit task title
+    console.log("editTaskTitle called");
   }
   editTaskDueDate() {
-    //edit task due date
+    console.log("editTaskDueDate called");
+  }
+  addProject() {
+    console.log("addProject called");
   }
 }

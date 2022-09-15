@@ -14,13 +14,24 @@ export const initUI = () => {
 };
 
 const initListeners = (ui) => {
-  const btnMenu = document.getElementById("menu");
-  document.addEventListener("click", (e) => {
-    console.log(e.target);
-    if (e.target.matches("#menu")) ui.openMenu();
-    if (e.target.matches("#home")) ui.goHome();
-    if (e.target.matches(".addTask")) ui.addTask();
-    if (e.target.matches(".task-title")) ui.editTaskTitle();
-    if (e.target.matches(".task-dueDate")) ui.editTaskDueDate();
+  // menu button
+  document.getElementById("menu").addEventListener("click", (e) => {
+    ui.openMenu();
+  });
+  // home button
+  document.getElementById("home").addEventListener("click", (e) => {
+    ui.goHome();
+  });
+  // add task
+  document.querySelector(".addTask").addEventListener("click", (e) => {
+    ui.addTask();
+  });
+  // edit task title
+  document.querySelector(".task-title").addEventListener("click", (e) => {
+    ui.editTaskTitle();
+  });
+  //edit task due date
+  document.querySelector(".task-dueDate").addEventListener("click", (e) => {
+    ui.editTaskDueDate();
   });
 };
