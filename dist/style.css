@@ -233,3 +233,18 @@ body {
   color: lightcoral;
   cursor: pointer;
 }
+
+.task-container > button {
+  flex-grow: 0;
+  margin: 16px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.task-container > button:hover {
+  color: var(--secondary-light);
+}

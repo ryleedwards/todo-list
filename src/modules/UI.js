@@ -59,6 +59,12 @@ class UI {
     taskContainer.appendChild(checkbox);
     taskContainer.appendChild(titleSpan);
     taskContainer.appendChild(dueDateSpan);
+    let editTask = document.createElement("button");
+    editTask.classList.add("edit-task", "fa-solid", "fa-pen-to-square");
+    let deleteTask = document.createElement("button");
+    deleteTask.classList.add("delete-task", "fa-solid", "fa-trash-can");
+    taskContainer.appendChild(editTask);
+    taskContainer.appendChild(deleteTask);
     return taskContainer;
   };
 
@@ -77,10 +83,10 @@ class UI {
 
 export const initUI = () => {
   const ui = new UI();
-  initListeners(ui);
   let currentTDL = initToDoList();
   let currentProject = currentTDL.getProjects()[0];
   ui.populateTasks(currentProject);
+  initListeners(ui);
 };
 
 const initListeners = (ui) => {
