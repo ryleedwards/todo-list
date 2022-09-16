@@ -17,7 +17,7 @@ class UI {
     console.log("goHome called");
   }
 
-  addTask(currentTDL) {
+  addTaskBtnHandler(currentTDL) {
     console.log("addTask called");
     let createNewTaskForm = () => {
       const content = document.getElementById("content");
@@ -43,12 +43,44 @@ class UI {
     const content = document.getElementById("content");
     console.log(content);
   };
+
+  createTaskContainer = (title, dueDate) => {
+    let taskContainer = document.createElement("div");
+    taskContainer.classList.add("task-container");
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("task-complete");
+    let titleSpan = document.createElement("span");
+    titleSpan.classList.add("task-title");
+    titleSpan.textContent = title;
+    let dueDateSpan = document.createElement("span");
+    dueDateSpan.classList.add("task-dueDate");
+    dueDateSpan.textContent = dueDate;
+    taskContainer.appendChild(checkbox);
+    taskContainer.appendChild(titleSpan);
+    taskContainer.appendChild(dueDateSpan);
+    return taskContainer;
+  };
+
+  populateTasks = (project) => {
+    const projectView = document.getElementById("project-view");
+    const btnAddTask = document.querySelector(".addTask");
+    console.log(btnAddTask);
+    project.getTasks().forEach((task) => {
+      let title = task.getTitle();
+      let dueDate = task.getDueDate();
+      let taskContainer = this.createTaskContainer(title, dueDate);
+      projectView.insertBefore(taskContainer, btnAddTask);
+    });
+  };
 }
 
 export const initUI = () => {
   const ui = new UI();
   initListeners(ui);
   let currentTDL = initToDoList();
+  let currentProject = currentTDL.getProjects()[0];
+  ui.populateTasks(currentProject);
 };
 
 const initListeners = (ui) => {
@@ -62,7 +94,7 @@ const initListeners = (ui) => {
   });
   // add task
   document.querySelector(".addTask").addEventListener("click", (e) => {
-    ui.addTask();
+    ui.addTaskBtnHandler();
   });
   // edit task title
   document.querySelector(".task-title").addEventListener("click", (e) => {
@@ -80,4 +112,5 @@ const initToDoList = () => {
     new Task(DEFAULT_TASK_TITLE, DEFAULT_TASK_DUE_DATE),
   ]);
   console.log(toDoList.getProjects()[0].getTasks()[0].getDueDate());
+  return toDoList;
 };
