@@ -104,15 +104,14 @@ body {
   flex-direction: column;
 }
 
-#project-view > * {
-  border: solid black 1px;
-}
-
 .project-title {
   padding: 8px;
   font-weight: bold;
   font-size: 1.75rem;
   height: 48px;
+  background-color: var(--primary-medium);
+  border: solid 1px var(--secondary-dark);
+  border-radius: 4px;
 }
 
 .task-container {
@@ -123,10 +122,21 @@ body {
 .task-container > * {
   flex-grow: 1;
   padding: 16px;
+  border-radius: 4px;
+}
+
+.task-dueDate {
+  display: block;
+  text-align: center;
+  flex-grow: 0;
 }
 
 .task-container > *:hover {
   background-color: var(--primary-dark);
+}
+
+.task-container > span {
+  width: 250px;
 }
 
 .btn.addTask {
@@ -137,6 +147,12 @@ body {
   height: 24px;
   margin-top: 24px;
   align-self: center;
+}
+
+.btn.addTask:hover {
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+  cursor: pointer;
 }
 
 .task-complete {
