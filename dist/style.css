@@ -191,3 +191,45 @@ body {
   list-style: none;
   margin-left: 16px;
 }
+
+.add-task-form {
+  position: absolute;
+  height: 33vh;
+  width: 33vw;
+  background-color: var(--primary-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 4px;
+}
+
+.btn.submit-task {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--secondary-dark);
+  color: var(--secondary-light);
+  font-weight: bold;
+}
+
+.btn.submit-task:hover {
+  background-color: var(--secondary-light);
+  color: var(--secondary-dark);
+  cursor: pointer;
+}
+
+.exit-form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4px;
+  font-size: 1.5rem;
+  color: red;
+}
+
+.exit-form:hover {
+  color: lightcoral;
+  cursor: pointer;
+}
