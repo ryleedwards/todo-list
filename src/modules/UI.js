@@ -5,33 +5,40 @@ import { compareAsc, format } from "date-fns";
 
 const DEFAULT_PROJECT_TITLE = "Default";
 const DEFAULT_TASK_TITLE = "Default task";
-const DEFAULT_TASK_DESC = "Create my first task";
+//const DEFAULT_TASK_DESC = "Create my first task";
+const DEFAULT_TASK_DUE_DATE = format(new Date(), "MM/dd/yyyy");
 
 class UI {
   openMenu() {
     document.querySelector(".sidebar").classList.toggle("hidden");
   }
+
   goHome() {
     console.log("goHome called");
   }
+
   addTask(currentTDL) {
     console.log("addTask called");
     let createNewTaskForm = () => {
       const content = document.getElementById("content");
       let taskForm = document.createElement("form");
+      document.getElementById("content").classList.toggle("formEntry");
     };
     createNewTaskForm();
   }
-  d;
+
   editTaskTitle() {
     console.log("editTaskTitle called");
   }
+
   editTaskDueDate() {
     console.log("editTaskDueDate called");
   }
+
   addProject() {
     console.log("addProject called");
   }
+
   createNewTaskForm = () => {
     const content = document.getElementById("content");
     console.log(content);
@@ -68,5 +75,9 @@ const initListeners = (ui) => {
 };
 
 const initToDoList = () => {
-  return new ToDoList();
+  let toDoList = new ToDoList();
+  toDoList.addProject(DEFAULT_PROJECT_TITLE, [
+    new Task(DEFAULT_TASK_TITLE, DEFAULT_TASK_DUE_DATE),
+  ]);
+  console.log(toDoList.getProjects()[0].getTasks()[0].getDueDate());
 };
