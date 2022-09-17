@@ -70,6 +70,13 @@ class UI {
     btnExitForm.classList.add("fa-solid", "fa-circle-xmark", "exit-form");
     form.appendChild(btnExitForm);
     content.appendChild(form);
+
+    // exit form listener
+    btnExitForm.addEventListener("click", () => {
+      console.log("TEST");
+      projectView.classList.toggle("form-entry");
+      content.removeChild(form);
+    });
   }
 
   editTaskTitle() {
