@@ -231,6 +231,12 @@ body {
   cursor: pointer;
 }
 
+.task-container {
+  border: solid 2px var(--primary-light);
+  border-radius: 8px;
+  margin: 4px;
+}
+
 .task-container > button {
   flex-grow: 0;
   margin: 16px;
