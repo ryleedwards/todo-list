@@ -18,13 +18,58 @@ class UI {
   }
 
   addTaskBtnHandler(currentTDL) {
-    console.log("addTask called");
-    let createNewTaskForm = () => {
-      const content = document.getElementById("content");
-      let taskForm = document.createElement("form");
-      document.getElementById("content").classList.toggle("formEntry");
-    };
-    createNewTaskForm();
+    const content = document.getElementById("content");
+    const projectView = document.getElementById("project-view");
+    projectView.classList.toggle("form-entry");
+
+    // create form
+    const form = document.createElement("form");
+    form.setAttribute("method", "get");
+    form.setAttribute("action", "#");
+    form.classList.add("add-task-form");
+
+    // task title entry
+    const divTitle = document.createElement("div");
+    divTitle.classList.add("form-input");
+    const labelTitle = document.createElement("label");
+    labelTitle.setAttribute("for", "input-title");
+    labelTitle.textContent = "Title:";
+    const inputTitle = document.createElement("input");
+    inputTitle.setAttribute("type", "text");
+    inputTitle.setAttribute("name", "input-title");
+    inputTitle.setAttribute("required", "true");
+    divTitle.appendChild(labelTitle);
+    divTitle.appendChild(inputTitle);
+    form.appendChild(divTitle);
+
+    // due date entry
+    const divDueDate = document.createElement("div");
+    divDueDate.classList.add("form-input");
+    const labelDueDate = document.createElement("label");
+    labelDueDate.setAttribute("for", "input-dueDate");
+    labelDueDate.textContent = "Due Date:";
+    const inputDueDate = document.createElement("input");
+    inputDueDate.setAttribute("type", "date");
+    inputDueDate.setAttribute("name", "input-dueDate");
+    divDueDate.appendChild(labelDueDate);
+    divDueDate.appendChild(inputDueDate);
+    form.appendChild(divDueDate);
+
+    // submit button
+    const divBtnSubmit = document.createElement("div");
+    divBtnSubmit.classList.add("form-input");
+    const inputBtnSubmit = document.createElement("input");
+    inputBtnSubmit.setAttribute("type", "submit");
+    inputBtnSubmit.setAttribute("value", "Submit");
+    inputBtnSubmit.classList.add("btn", "submit-task");
+    divBtnSubmit.appendChild(inputBtnSubmit);
+    form.appendChild(divBtnSubmit);
+
+    // form exit button
+    const btnExitForm = document.createElement("i");
+    btnExitForm.classList.add("fa-solid", "fa-circle-xmark", "exit-form");
+    form.appendChild(btnExitForm);
+    content.appendChild(form);
   }
 
   editTaskTitle() {
@@ -38,11 +83,6 @@ class UI {
   addProject() {
     console.log("addProject called");
   }
-
-  createNewTaskForm = () => {
-    const content = document.getElementById("content");
-    console.log(content);
-  };
 
   createTaskContainer = (title, dueDate) => {
     let taskContainer = document.createElement("div");
@@ -71,7 +111,6 @@ class UI {
   populateTasks = (project) => {
     const projectView = document.getElementById("project-view");
     const btnAddTask = document.querySelector(".addTask");
-    console.log(btnAddTask);
     project.getTasks().forEach((task) => {
       let title = task.getTitle();
       let dueDate = task.getDueDate();

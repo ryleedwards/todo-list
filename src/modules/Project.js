@@ -8,8 +8,6 @@ export default class Project {
     check if tasks is an array. If it's a string, the below works, but 
     it's not my intended use. Possible better use of TypeScript in future...*/
     if (tasks != undefined && tasks.length > 0) {
-      console.log(`Log from project constructor if statement
-       & I was passed ${tasks}`);
       this.tasks = tasks;
     } else this.tasks = [];
   }
