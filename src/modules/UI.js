@@ -9,6 +9,11 @@ const DEFAULT_TASK_TITLE = "Default task";
 const DEFAULT_TASK_DUE_DATE = format(new Date(), "MM/dd/yyyy");
 
 class UI {
+  constructor(activeTDL, activeProject) {
+    this.activeTDL = activeTDL;
+    this.activeProject = activeProject;
+  }
+
   openMenu() {
     document.querySelector(".sidebar").classList.toggle("hidden");
   }
@@ -65,6 +70,9 @@ class UI {
     divBtnSubmit.appendChild(inputBtnSubmit);
     form.appendChild(divBtnSubmit);
 
+    //submit button listener
+    inputBtnSubmit.addEventListener("click", () => {});
+
     // form exit button
     const btnExitForm = document.createElement("i");
     btnExitForm.classList.add("fa-solid", "fa-circle-xmark", "exit-form");
@@ -73,10 +81,13 @@ class UI {
 
     // exit form listener
     btnExitForm.addEventListener("click", () => {
-      console.log("TEST");
       projectView.classList.toggle("form-entry");
       content.removeChild(form);
     });
+  }
+
+  addTask(title, dueDate) {
+    this.activeProject.addTask(title, dueDate);
   }
 
   editTaskTitle() {
@@ -129,9 +140,9 @@ class UI {
 
 export const initUI = () => {
   const ui = new UI();
-  let currentTDL = initToDoList();
-  let currentProject = currentTDL.getProjects()[0];
-  ui.populateTasks(currentProject);
+  ui.activeTDL = initToDoList();
+  ui.activeProject = ui.activeTDL.getProjects()[0];
+  ui.populateTasks(ui.activeProject);
   initListeners(ui);
 };
 
